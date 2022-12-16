@@ -1,0 +1,57 @@
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<html>
+  <head>
+    <title> ¿QUIERES PAGA EXTRA? </title>
+    <style>
+      body {
+        background-color: #f1f1f1;
+      }
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h1 {
+        color: #333;
+      }
+      button {
+        background-color: #3498db;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+      button:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1> ¿QUIERES PAGA EXTRA? </h1>
+      <button id="button1" onclick="noExtraPay()">NO, estoy encantado de trabajar por cacahuetes</button>
+      <button id="button2" onmouseover="moveButton()">SI, ya era hora</button>
+    </div>
+
+    <script>
+      function noExtraPay() {
+        alert("Perfecto!, la empresa lo agradece.");
+      }
+
+      function moveButton() {
+        var button2 = document.getElementById("button2");
+        var windowWidth = window.innerWidth;
+        var windowHeight = window.innerHeight;
+        var buttonWidth = button2.offsetWidth;
+        var buttonHeight = button2.offsetHeight;
+        var randomX = Math.floor(Math.random() * (windowWidth - buttonWidth));
+        var randomY = Math.floor(Math.random() * (windowHeight - buttonHeight));
+        button2.style.position = "absolute";
+        button2.style.top = randomY + "px";
+        button2.style.left = randomX + "px";
+      }
+    </script>
+  </body>
+</html>
